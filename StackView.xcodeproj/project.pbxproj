@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB626EEC1D23EDAB00C6755B /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB626EEB1D23EDAB00C6755B /* Cell.swift */; };
+		AB626EEE1D23F33C00C6755B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB626EED1D23F33C00C6755B /* App.swift */; };
 		AB76330F1D22978100B0F8E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB76330E1D22978100B0F8E7 /* AppDelegate.swift */; };
 		AB7633111D22978100B0F8E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7633101D22978100B0F8E7 /* ViewController.swift */; };
 		AB7633141D22978100B0F8E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB7633121D22978100B0F8E7 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB626EEB1D23EDAB00C6755B /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		AB626EED1D23F33C00C6755B /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		AB76330B1D22978100B0F8E7 /* StackView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB76330E1D22978100B0F8E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB7633101D22978100B0F8E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +103,9 @@
 			children = (
 				AB76330E1D22978100B0F8E7 /* AppDelegate.swift */,
 				AB7633101D22978100B0F8E7 /* ViewController.swift */,
+				AB626EED1D23F33C00C6755B /* App.swift */,
 				AB7633121D22978100B0F8E7 /* Main.storyboard */,
+				AB626EEB1D23EDAB00C6755B /* Cell.swift */,
 				AB7633151D22978100B0F8E7 /* Assets.xcassets */,
 				AB7633171D22978100B0F8E7 /* LaunchScreen.storyboard */,
 				AB76331A1D22978100B0F8E7 /* Info.plist */,
@@ -257,7 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB7633111D22978100B0F8E7 /* ViewController.swift in Sources */,
+				AB626EEE1D23F33C00C6755B /* App.swift in Sources */,
 				AB76330F1D22978100B0F8E7 /* AppDelegate.swift in Sources */,
+				AB626EEC1D23EDAB00C6755B /* Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +490,7 @@
 				AB7633351D22978200B0F8E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB7633361D22978200B0F8E7 /* Build configuration list for PBXNativeTarget "StackViewTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +499,7 @@
 				AB7633381D22978200B0F8E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB7633391D22978200B0F8E7 /* Build configuration list for PBXNativeTarget "StackViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +508,7 @@
 				AB76333B1D22978200B0F8E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

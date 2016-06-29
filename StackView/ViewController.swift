@@ -8,46 +8,79 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var essentialsLbl: UILabel!
     @IBOutlet weak var showBtn: UIButton!
     @IBOutlet weak var obtainBtn: UIButton!
     
+    @IBOutlet weak var sectionSelected: UISegmentedControl!
+    @IBOutlet weak var sectionName: UILabel!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var paidApps:[(name: String, image: String)] = [("Disturbia", "Disturbia")]
+    var freeApps:[(name: String, image: String)] = [("Draw In", "Draw_In")]
+    var rentableApps:[(name: String, image: String)] = [("Smart Ear", "Smart_Ear")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.obtainBtn.layer.borderWidth = 2
-        self.obtainBtn.layer.cornerRadius = 6
-        self.obtainBtn.layer.borderColor = UIColor.init(red: 0, green: 122/255.0, blue: 255/255.0, alpha: 1).CGColor
         
-    
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
+    @IBAction func sectionChanged(sender: AnyObject) {
+        self.sectionName.text = self.sectionSelected.titleForSegmentAtIndex(self.sectionSelected.selectedSegmentIndex)
+        
+        self.tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func click(sender: AnyObject) {
-        self.essentialsLbl.hidden = !self.essentialsLbl.hidden
-        if self.showBtn.titleLabel == "Show" {
-            self.showBtn.setTitle("Hide", forState: UIControlState.Normal)
-        }else {
-            self.showBtn.setTitle("Show", forState: UIControlState.Normal)
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch self.sectionSelected.selectedSegmentIndex {
+        case 0:
+            return paidApps.count
+        case 1:
+            return freeApps.count
+        case 2:
+            return rentableApps.count
+        default:
+            return 0
         }
     }
     
-    //        self.obtainBtn.layer.borderColor = UIColor.init(red: 0, green: 122/255.0, blue: 255/255.0, alpha: 1).CGColor
-    //        self.obtainBtn.layer.borderColor = UIColor.grayColor().CGColor
-   
-    
-    @IBAction func down(sender: AnyObject) {
-        self.obtainBtn.layer.borderColor = UIColor.grayColor().CGColor
-    }
-    
-    @IBAction func Up(sender: AnyObject) {
-        self.obtainBtn.layer.borderColor = UIColor(red: 0, green: 122/255.0, blue: 255/255.0, alpha: 1).CGColor
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: Cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! Cell
+        
+        
+        switch self.sectionSelected.selectedSegmentIndex {
+        case 0:
+            cell.appName.text = paidApps[indexPath.row].name
+            cell.iconImage.image = UIImage(named: paidApps[indexPath.row].image)
+            
+        case 1:
+            cell.appName.text = freeApps[indexPath.row].name
+            cell.iconImage.image = UIImage(named: freeApps[indexPath.row].image)
+        case 2:
+            cell.appName.text = rentableApps[indexPath.row].name
+            cell.iconImage.image = UIImage(named: rentableApps[indexPath.row].image)
+        default:
+            break
+        }
+        
+        cell.iconImage.layer.cornerRadius = 15
+        cell.iconImage.clipsToBounds = true
+        
+
+        
+        return cell
     }
     
 }
